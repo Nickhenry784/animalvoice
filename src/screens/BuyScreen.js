@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable react-hooks/exhaustive-deps */
 import {
   Text,
@@ -18,9 +19,10 @@ import RNIap, {
 } from 'react-native-iap';
 
 import {items, subs} from '../conf';
-import { useDispatch } from 'react-redux';
-import { images } from '../assets';
-import { appStyle } from './ItemScreen';
+import {useDispatch} from 'react-redux';
+import {images} from '../assets';
+import {appStyle} from './ItemScreen';
+import { increamentByAmount } from '../redux/pointSlice';
 
 let purchaseUpdateSubscription;
 let purchaseErrorSubscription;
@@ -58,7 +60,6 @@ export default function App() {
       const res = await RNIap.getProducts(itemsSku);
       const resSubs = await RNIap.getSubscriptions(subsSku);
 
-
       setProducts(res);
       setSubscriptions(resSubs);
     } catch (err) {
@@ -82,9 +83,7 @@ export default function App() {
     };
   }, []);
 
-
   const handleCompletePurchase = ({productId}) => {
-
     switch (productId) {
       case items[0].sku:
         dispatch(increamentByAmount(items[0].value));
@@ -121,43 +120,42 @@ export default function App() {
 
   return (
     <ImageBackground style={appStyle.homeView} source={images.bg}>
-    <ScrollView
-      style={styles.bg}
-      contentContainerStyle={{paddingHorizontal: 20, paddingTop: 10}}>
-      {isLoading ? (
-        <ActivityIndicator size="large" />
-      ) : (
-        <>
-          <Text style={styles.labelText}>In-app Purchase</Text>
-          <View style={styles.itemList3}>
-            {products.map((product, index) => (
-              <View style={styles.item3} key={product.productId}>
-                <TouchableOpacity
-                  onPress={() => handleRequestBuy(product.productId)}
-                  style={styles.item3Content}>
-                  <Text style={styles.price}>{product.localizedPrice}</Text>
-                  <Text style={styles.descr}>{product.description}</Text>
-                </TouchableOpacity>
-              </View>
-            ))}
-          </View>
-          <Text style={styles.labelText}>Subscriptions</Text>
-          <View style={styles.itemList3}>
-            {subscriptions.map((product, index) => (
-              <View style={styles.item3} key={product.productId}>
-                <TouchableOpacity
-                  onPress={() => handleRequestBuy(product.productId)}
-                  style={styles.item3Content}>
-                  <Text style={styles.price}>{product.localizedPrice}</Text>
-                  <Text style={styles.descr}>{product.description}</Text>
-                </TouchableOpacity>
-              </View>
-            ))}
-          </View>
-        </>
-      )}
-
-    </ScrollView>
+      <ScrollView
+        style={styles.bg}
+        contentContainerStyle={{paddingHorizontal: 20, paddingTop: 10}}>
+        {isLoading ? (
+          <ActivityIndicator size="large" />
+        ) : (
+          <>
+            <Text style={styles.labelText}>In-app Purchase</Text>
+            <View style={styles.itemList3}>
+              {products.map((product, index) => (
+                <View style={styles.item3} key={product.productId}>
+                  <TouchableOpacity
+                    onPress={() => handleRequestBuy(product.productId)}
+                    style={styles.item3Content}>
+                    <Text style={styles.price}>{product.localizedPrice}</Text>
+                    <Text style={styles.descr}>{product.description}</Text>
+                  </TouchableOpacity>
+                </View>
+              ))}
+            </View>
+            <Text style={styles.labelText}>Subscriptions</Text>
+            <View style={styles.itemList3}>
+              {subscriptions.map((product, index) => (
+                <View style={styles.item3} key={product.productId}>
+                  <TouchableOpacity
+                    onPress={() => handleRequestBuy(product.productId)}
+                    style={styles.item3Content}>
+                    <Text style={styles.price}>{product.localizedPrice}</Text>
+                    <Text style={styles.descr}>{product.description}</Text>
+                  </TouchableOpacity>
+                </View>
+              ))}
+            </View>
+          </>
+        )}
+      </ScrollView>
     </ImageBackground>
   );
 }

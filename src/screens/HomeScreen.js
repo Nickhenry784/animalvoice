@@ -40,7 +40,7 @@ const HomeScreen = () => {
   };
 
   return (
-    <ImageBackground style={appStyle.homeView} source={images.cavoi}>
+    <ImageBackground style={appStyle.homeView} source={images.keylap}>
       <View style={appStyle.appBar}>
         <TouchableOpacity onPress={onClickTurnButton}>
           <View style={appStyle.turnView}>
@@ -80,7 +80,7 @@ export const appStyle = StyleSheet.create({
   },
   labelText: {
     fontSize: 30,
-    fontFamily: 'Watermelon Days',
+    fontWeight: 'bold',
     color: '#3d1900',
   },
   closeView: {
@@ -122,7 +122,7 @@ export const appStyle = StyleSheet.create({
   },
   turnText: {
     fontSize: 30,
-    fontFamily: 'Watermelon Days',
+    fontWeight: 'bold',
     color: 'white',
   },
   buyImage: {

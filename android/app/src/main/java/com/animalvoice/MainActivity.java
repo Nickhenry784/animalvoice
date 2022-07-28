@@ -1,4 +1,4 @@
-package com.amazon.animalvoicemc;
+package com.amazon.technologyvoiceax;
 
 import com.facebook.react.ReactActivity;
 

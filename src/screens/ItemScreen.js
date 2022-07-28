@@ -17,17 +17,13 @@ const windowWidth = Dimensions.get('screen').width;
 const windowHeight = Dimensions.get('screen').height;
 
 const dataBg = [
-  {id: 1, bg: images.cavoi, url: 'voice_ca_voi.mp3', title: 'Whale'},
-  {id: 2, bg: images.cao, url: 'voice_cao.mp3', title: 'Fox'},
-  {id: 3, bg: images.cumeo, url: 'voice_cu_meo.mp3', title: 'Owl'},
-  {id: 4, bg: images.nhai, url: 'voice_nhai.mp3', title: 'Frog'},
-  {id: 5, bg: images.ngua, url: 'voice_ngua.mp3', title: 'Horse'},
-  {id: 6, bg: images.meo, url: 'voice_meo.mp3', title: 'Cat'},
-  {id: 7, bg: images.pig, url: 'voice_pig.mp3', title: 'Pig'},
-  {id: 8, bg: images.ho, url: 'voice_ho.mp3', title: 'Tiger'},
-  {id: 9, bg: images.gau, url: 'voice_gau.mp3', title: 'Bear'},
-  {id: 10, bg: images.rong, url: 'voice_rong.mp3', title: 'Dragon'},
-  {id: 11, bg: images.vit, url: 'voice_vit.mp3', title: 'Duck'},
+  {id: 1, bg: images.chuphinh, url: 'chupanh.mp3', title: 'Whale'},
+  {id: 2, bg: images.clickmouse, url: 'clickchuot.mp3', title: 'Fox'},
+  {id: 3, bg: images.dienthoai, url: 'dienthoai.mp3', title: 'Owl'},
+  {id: 4, bg: images.enter, url: 'enter.mp3', title: 'Frog'},
+  {id: 5, bg: images.keylap, url: 'keylap.mp3', title: 'Horse'},
+  {id: 6, bg: images.keypc, url: 'keypc.mp3', title: 'Cat'},
+  {id: 7, bg: images.quetma, url: 'quetma.mp3', title: 'Pig'},
 ];
 
 const ItemScreen = ({navigation, route}) => {
@@ -90,7 +86,7 @@ const ItemScreen = ({navigation, route}) => {
     <ImageBackground style={appStyle.homeView} source={dataBg[index].bg}>
       <View style={appStyle.closeView}>
         <TouchableOpacity onPress={() => onClickCloseBtn()}>
-          <Image source={images.arrowback} style={appStyle.btnCl} />
+          <Image source={images.buttonexit} style={appStyle.btnCl} />
         </TouchableOpacity>
       </View>
       <View style={appStyle.bottomView}>

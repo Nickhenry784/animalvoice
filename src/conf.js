@@ -1,38 +1,38 @@
 /* eslint-disable prettier/prettier */
 export const items = [
   {
-    sku: 'com.amazon.malvoi_10',
+    sku: 'com.amazon.logyvoiceax_1',
     value: 50,
   },
   {
-    sku: 'com.amazon.malvoi_20',
+    sku: 'com.amazon.logyvoiceax_2',
     value: 100,
   },
   {
-    sku: 'com.amazon.malvoi_30',
+    sku: 'com.amazon.logyvoiceax_3',
     value: 200,
   },
   {
-    sku: 'com.amazon.malvoi_40',
+    sku: 'com.amazon.logyvoiceax_4',
     value: 300,
   },
 ];
 
 export const subs = [
   {
-    sku: 'com.amazon.weekly_malvoi_100',
+    sku: 'com.amazon.weekly_logyvoiceax_1',
     value: 100,
   },
   {
-    sku: 'com.amazon.weekly_malvoi_200',
+    sku: 'com.amazon.weekly_logyvoiceax_2',
     value: 200,
   },
   {
-    sku: 'com.amazon.monthly_malvoi_400',
+    sku: 'com.amazon.monthly_logyvoiceax_1',
     value: 400,
   },
   {
-    sku: 'com.amazon.monthly_malvoi_700',
+    sku: 'com.amazon.monthly_logyvoiceax_2',
     value: 700,
   },
 ];
